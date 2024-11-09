@@ -1,24 +1,37 @@
 package com.exemple.java;
 
-import java.math.BigDecimal;
-
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Converting numeric values:");
-        int value = 300;
-        System.out.println("int intValue = " + value);
+        System.out.println("Math Classes:");
 
-        long longValue = value; // upcasting or widening
-        System.out.println("long longValue = " + longValue);
+        int x = 36;
+        int y = 20;
 
-        short shortValue = (short) value; // down casting
-        System.out.println("short shortValue = " + shortValue);
+        int add = x + y;
+        int sub = x - y;
+        int mul = x * y;
+        double div = (double) x / y;
+        int mod = x % y;
 
-        byte byteValue = (byte) value; // down casting
-        System.out.println("byte byteValue = " + byteValue); //44
-        /* DEC of 300 is 0001 0010 1100
-            in byte we have only 8bits 0010 1100 == DEC 44
-        */
+        double negative = -98.887;
+        double absNegative = Math.abs(negative);
 
+        long rounded = Math.round(absNegative);
+
+        double roundedCeil = Math.ceil(absNegative);
+        double roundedFloor = Math.floor(absNegative);
+
+        System.out.println("Addition: " + add);
+        System.out.println("Subtraction: " + sub);
+        System.out.println("Multiplication: " + mul);
+        System.out.println("Division: " + div);
+        System.out.println("Modulus: " + mod);
+        System.out.println("###############################");
+        System.out.println("Negative: " + negative);
+        System.out.println("AbsNegative: " + absNegative);
+        System.out.println("###############################");
+        System.out.println("Rounded: " + rounded);
+        System.out.println("RoundedCeil: " + roundedCeil);
+        System.out.println("RoundedFloor: " + roundedFloor);
     }
 }
