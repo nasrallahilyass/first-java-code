@@ -4,17 +4,21 @@ import java.math.BigDecimal;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("BigDecimal:");
-        double value = .15;
-        double total = value * 3;
-        System.out.println("total: " + total); // 0.44999999999999996
+        System.out.println("Converting numeric values:");
+        int value = 300;
+        System.out.println("int intValue = " + value);
 
-        String valueText = Double.toString(value);
-        System.out.println("valueText: " + valueText);
+        long longValue = value; // upcasting or widening
+        System.out.println("long longValue = " + longValue);
 
-        BigDecimal bigDecimalValue = new BigDecimal(valueText);
-        BigDecimal bigDecimalTotal = bigDecimalValue.add(bigDecimalValue.add(bigDecimalValue));
-        System.out.println("bigDecimalTotal: " + bigDecimalTotal);
+        short shortValue = (short) value; // down casting
+        System.out.println("short shortValue = " + shortValue);
+
+        byte byteValue = (byte) value; // down casting
+        System.out.println("byte byteValue = " + byteValue); //44
+        /* DEC of 300 is 0001 0010 1100
+            in byte we have only 8bits 0010 1100 == DEC 44
+        */
 
     }
 }
