@@ -5,25 +5,19 @@ public class Main {
     public static boolean userCar = true;
 
     public static void main(String[] args) {
-        System.out.println("Ternary operator:");
-        int userAge = 18;
-        String msg = (userAge >= 18 && userCar) ? "Allowed to drive" : "Not allowed to drive";
-        System.out.println(msg);
-        System.out.println("Switch case:");
-        int grade = 1;
-        switch (grade) {
-            case 1:
-                System.out.println("You are Excellent!");
-                break;
-            case 2:
-                System.out.println("You are Good!");
-                break;
-            case 3:
-                System.out.println("You are Bad!");
-                break;
-            default:
-                System.out.println("Please enter a grad!");
+        int i, j, number;
+        j = 0;
+        number = 5;
+        System.out.println("For loop:");
+        for (i = 1; i <= 10; i++) {
+            System.out.println(number + "X" + i + "=" + number * i);
         }
-
+        System.out.println("###############################");
+        System.out.println("While loop:");
+        while (j <= 10) {
+            System.out.println(number + "X" + j + "=" + number * j);
+            j++;
+        }
+        System.out.println("###############################");
     }
 }
