@@ -1,17 +1,25 @@
 package com.exemple.java;
 
 
-import java.text.NumberFormat;
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Locale;
+
 
 public class Main {
     public static void main(String[] args) {
-        Locale locale = new Locale("en", "US");
-        double number = 10090201;
-        NumberFormat formatter = NumberFormat.getNumberInstance(locale);
-        System.out.println(formatter.format(number));
-        System.out.println("#############################");
-        NumberFormat currFormatter = NumberFormat.getCurrencyInstance(locale);
-        System.out.println("currency: " + currFormatter.format(number));
+        Date date = new Date();
+        Locale locale = new Locale("ar", "MA");
+        System.out.println("Date: " + date);
+        System.out.println("#######################################");
+        GregorianCalendar calendar = new GregorianCalendar();
+        System.out.println("Calender date: " + calendar.getTime());
+        calendar.add(Calendar.DATE, 2);
+        System.out.println("Calender updated date: " + calendar.getTime());
+        System.out.println("#######################################");
+        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.FULL, locale);
+        System.out.println("Date format: " + dateFormat.format(date));
     }
 }
