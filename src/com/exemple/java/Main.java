@@ -2,22 +2,19 @@ package com.exemple.java;
 
 
 public class Main {
-    public static boolean userCar = true;
-
     public static void main(String[] args) {
-        int i, j, number;
-        j = 0;
-        number = 5;
-        System.out.println("For loop:");
-        for (i = 1; i <= 10; i++) {
-            System.out.println(number + "X" + i + "=" + number * i);
+        int i = 1;
+        while (i <= 10) {
+//            if (i == 5) {
+//                break;
+//            }
+            if (i == 5) {
+                i++;
+                continue;
+            }
+            System.out.println("This is number:" + i);
+            i++;
         }
-        System.out.println("###############################");
-        System.out.println("While loop:");
-        while (j <= 10) {
-            System.out.println(number + "X" + j + "=" + number * j);
-            j++;
-        }
-        System.out.println("###############################");
+        System.out.println("Loop has been finished");
     }
 }
