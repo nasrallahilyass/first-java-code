@@ -3,25 +3,22 @@ package com.exemple.java;
 
 public class Main {
     public static void main(String[] args) {
-        int age = 17;
-        int pointer = 1;
-        // Do While loop:
-        /*  Use while if you :
-                want the loop to run only if the condition is true from the beginning.
-            Use do-while if you:
-                need the loop to run at least once, regardless of the condition.
-        */
-        do {
-            System.out.println("You're successfully tests are: " + pointer);
-            pointer++;
-        }
-        while (pointer <= 3 && age >= 18);
-        // For each loop:
-        int[] numbers = {13, 1, 54, 6, 77};
-        for (int number : numbers) {
-            System.out.println("number is: " + number);
+        String str1 = "This is a string";
+        System.out.println(str1);
+        String str2 = "This is an other string";
+        System.out.println(str2);
+        String str3 = "My name is ";
+        String str4 = "ILYASS, i'm ";
+        String str5 = str3 + str4 + 24 + " years old.";
+        System.out.println(str5);
+        System.out.println("##################################");
+        char[] chars = {'I', 'L', 'Y', 'A', 'S', 'S'};
+        String str6 = new String(chars);
+        System.out.println(str6);
+        System.out.println("##################################");
+        char[] toCharArray = str6.toCharArray();
+        for (char c : toCharArray) {
+            System.out.println(c);
         }
     }
-
-    ;
 }
