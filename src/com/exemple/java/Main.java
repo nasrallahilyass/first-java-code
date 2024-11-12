@@ -1,25 +1,23 @@
 package com.exemple.java;
 
 
-import java.text.DateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Locale;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 
 public class Main {
     public static void main(String[] args) {
-        Date date = new Date();
-        Locale locale = new Locale("ar", "MA");
-        System.out.println("Date: " + date);
-        System.out.println("#######################################");
-        GregorianCalendar calendar = new GregorianCalendar();
-        System.out.println("Calender date: " + calendar.getTime());
-        calendar.add(Calendar.DATE, 2);
-        System.out.println("Calender updated date: " + calendar.getTime());
-        System.out.println("#######################################");
-        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.FULL, locale);
-        System.out.println("Date format: " + dateFormat.format(date));
+        System.out.println("LocalDateTime && DateTimeFormatter:");
+        LocalDateTime date = LocalDateTime.now();
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ISO_DATE;
+        System.out.println("##########################");
+        System.out.println(dateFormatter.format(date));
+        System.out.println("##########################");
+        DateTimeFormatter dateFormatterPattern = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        System.out.println(dateFormatterPattern.format(date));
+        System.out.println("##########################");
+
+
     }
 }
