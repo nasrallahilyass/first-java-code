@@ -1,28 +1,22 @@
 package com.exemple.java;
 
-
 public class Main {
     public static void main(String[] args) {
-        Phone phone = new Phone(); // Instantiation
+        Phone phone = new Phone("Iphone 12");
+        Phone newPhone = new Phone("IOS", "Iphone 14 Pro Max", "Black", 2024, "Iphone");
 
-        phone.brand = "iphone";
-        phone.os = "ios";
-        phone.model = "iphone 16 pro max";
-        phone.color = "red";
+        System.out.println("#############################");
+        System.out.println(phone.getName());
+        phone.setOs("IOS");
+        System.out.println(phone.getOs());
 
-        phone.Ring();
-        phone.Video();
-
-        // Anonymous Object
-        // An anonymous object is created without being assigned a reference.
-        new Phone().Ring();
-
-        // Access Modifiers
-        /*
-        public: Accessible from any other class.
-        protected: Accessible within the same package and by subclasses.
-        default (no modifier): Accessible only within the same package.
-        private: Accessible only within the declared class.
-         */
+        System.out.println("#############################");
+        System.out.println(
+                newPhone.getName() + " " +
+                        newPhone.getOs() + " " +
+                        newPhone.getColor() + " " +
+                        newPhone.getYear() + " " +
+                        newPhone.getModel()
+        );
     }
 }
