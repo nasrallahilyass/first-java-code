@@ -1,0 +1,18 @@
+//Polymorphism (Method Overriding)
+    Method Overriding requires inheritance because it allows a subclass
+    to provide a specific implementation of a method that is already defined
+    in its superclass. This enables polymorphism,
+    where the subclass can customize the behavior of
+    the inherited method while maintaining
+    the same method signature (name, return type, and parameters)
+
+    N.B:
+    Can't do override to static methods.
+    Only void methods.
+
+//Polymorphism (Method Overloading)
+    Polymorphism in Java is the ability of an object to take on many forms,
+    allowing a single method or interface to operate on different types
+    (e.g., using method overriding to provide specific implementations for subclasses).
+    It enables flexibility and reusability by letting code work with objects
+    of different classes in a unified way.

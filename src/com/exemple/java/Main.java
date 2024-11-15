@@ -1,56 +1,35 @@
 package com.exemple.java;
 
-import com.example.project.Account;
 
 public class Main {
+    //Polymorphism (Method Overloading)
+    public static float order(float total) {
+        return total;
+    }
+
+    public static float order(float total, float deliveryCosts) {
+        return total + deliveryCosts;
+
+    }
+
+    public static float order(float total, float deliveryCosts, float discountCosts) {
+        return total + deliveryCosts - discountCosts;
+    }
+
     public static void main(String[] args) {
-        /*
-            Inheritance Type	        Description
-            Single Inheritance	        A class inherits from one superclass only.
-            Multilevel Inheritance	    A class inherits from a superclass, which itself inherits another class.
-            Hierarchical Inheritance	Multiple classes inherit from the same superclass.
-            Multiple Inheritance	    Achieved with interfaces (not direct class inheritance).
-     */
-        Student newStudent = new Student("Ilyass", 24, "English", 18);
-        PrivateStudent newPrivateStudent = new PrivateStudent("Bennis", 22, "Business", 20, 9000);
-        PublicStudent newPublicStudent = new PublicStudent("Ali", 18, "Physics", 12, 100);
+        Employee employee1 = new Employee("Bob Green", "USA", "Finance", "bob.green@mail.uk.co", 4000);
+        SalariedEmployee employee2 = new SalariedEmployee("Tom Fisher", "UK", "Development", "tom.fisher@mail.uk.co", 4000, 200);
+        DailyEmployee employee3 = new DailyEmployee("Amanda nunes", "MOROCCO", "Insurance", "amanda.nunes@mail.uk.co", 0, 20, 20);
+        HourlyEmployee employee4 = new HourlyEmployee("Alex shill", "WELLS", "HR", "alex.shill@mail.uk.co", 0, 20, 7);
 
-        System.out.println("#################################");
-        System.out.println(
-                "Your name is " + newStudent.getName()
-                        + "\nYour age is " + newStudent.getAge()
-                        + "\nThe course name: " + newStudent.getCourse()
-                        + "\nThe course grade: " + newStudent.getGrade()
-        );
-        System.out.println("#################################");
-        System.out.println(
-                "Your name is " + newPublicStudent.getName()
-                        + "\nYour age is " + newPublicStudent.getAge()
-                        + "\nThe course name: " + newPublicStudent.getCourse()
-                        + "\nThe course grade: " + newPublicStudent.getGrade()
-                        + "\nYour Fee is: " + newPublicStudent.getOneTimeFee()
-        );
-        System.out.println("#################################");
-        System.out.println(
-                "Your name is " + newPrivateStudent.getName()
-                        + "\nYour age is " + newPrivateStudent.getAge()
-                        + "\nThe course name: " + newPrivateStudent.getCourse()
-                        + "\nThe course grade: " + newPrivateStudent.getGrade()
-                        + "\nYour Monthly Fee is: " + newPrivateStudent.getMonthlyFee()
-        );
-
-        System.out.println("#################################");
-        System.out.println("#################################");
-        System.out.println("#################################");
-
-        Account acc1 = new Account(10001, "Mr.Ilyass", 3000);
-        Account acc2 = new Account(10002, "Mr.Bennis", 30000);
-        Account acc3 = new Account(acc2);
-        acc1.deposit(1000);
-        acc1.withdraw(5000);
-        System.out.println(acc1.toString());
-        System.out.println(acc2.toString());
-        System.out.println(acc3.toString());
+        System.out.println("1. Employee Salary: " + employee1.getSalary());
+        System.out.println("#######################");
+        System.out.println("2. Employee Salary: " + employee2.getSalary());
+        System.out.println("#######################");
+        System.out.println("3. Employee Salary: " + employee3.getSalary());
+        System.out.println("#######################");
+        System.out.println("4. Employee Salary: " + employee4.getSalary());
+        System.out.println("#######################");
 
     }
 
