@@ -27,6 +27,11 @@ public class SalariedEmployee extends Employee {
     }
 
     @Override
+    public void print() {
+        System.out.println("Salaried Employee");
+    }
+
+    @Override
     public String toString() {
         return "SalariedEmployee{" +
                 "name='" + getName() + '\'' +

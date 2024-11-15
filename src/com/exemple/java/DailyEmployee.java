@@ -37,6 +37,12 @@ public class DailyEmployee extends Employee {
         return workDailyPrice * dailyRate;
     }
 
+
+    @Override
+    public void print() {
+        System.out.println("Daily Employee");
+    }
+
     @Override
     public String toString() {
         return "DailyEmployee{" +

@@ -23,12 +23,16 @@ public class Main {
         HourlyEmployee employee4 = new HourlyEmployee("Alex shill", "WELLS", "HR", "alex.shill@mail.uk.co", 0, 20, 7);
 
         System.out.println("1. Employee Salary: " + employee1.getSalary());
+        employee1.print();
         System.out.println("#######################");
         System.out.println("2. Employee Salary: " + employee2.getSalary());
+        employee2.print();
         System.out.println("#######################");
         System.out.println("3. Employee Salary: " + employee3.getSalary());
+        employee3.print();
         System.out.println("#######################");
         System.out.println("4. Employee Salary: " + employee4.getSalary());
+        employee4.print();
         System.out.println("#######################");
 
     }

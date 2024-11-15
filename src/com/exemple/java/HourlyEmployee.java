@@ -38,6 +38,12 @@ public class HourlyEmployee extends Employee {
         return workHoursPrice * hourlyRate;
     }
 
+
+    @Override
+    public void print() {
+        System.out.println("Hourly Employee");
+    }
+
     @Override
     public String toString() {
         return "HourlyEmployee{" +

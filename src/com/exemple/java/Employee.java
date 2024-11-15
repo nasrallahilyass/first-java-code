@@ -56,6 +56,10 @@ public class Employee {
         this.salary = salary;
     }
 
+    public void print() {
+        System.out.println("Employee");
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
