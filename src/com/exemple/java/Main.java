@@ -2,39 +2,31 @@ package com.exemple.java;
 
 
 public class Main {
-    //Polymorphism (Method Overloading)
-    public static float order(float total) {
-        return total;
+    static void funSuv(SUV obj) {
+        obj.autoPilot();
     }
 
-    public static float order(float total, float deliveryCosts) {
-        return total + deliveryCosts;
-
+    static void funHach(HachBach obj) {
+        obj.autoPilot();
     }
 
-    public static float order(float total, float deliveryCosts, float discountCosts) {
-        return total + deliveryCosts - discountCosts;
+    static void fun(Car obj) {
+        obj.autoPilot();
     }
+
 
     public static void main(String[] args) {
-        Employee employee1 = new Employee("Bob Green", "USA", "Finance", "bob.green@mail.uk.co", 4000);
-        SalariedEmployee employee2 = new SalariedEmployee("Tom Fisher", "UK", "Development", "tom.fisher@mail.uk.co", 4000, 200);
-        DailyEmployee employee3 = new DailyEmployee("Amanda nunes", "MOROCCO", "Insurance", "amanda.nunes@mail.uk.co", 0, 20, 20);
-        HourlyEmployee employee4 = new HourlyEmployee("Alex shill", "WELLS", "HR", "alex.shill@mail.uk.co", 0, 20, 7);
+        SUV suv = new SUV(4, 1, 1000);
+        HachBach hachBach = new HachBach(8, 2, 2000);
 
-        System.out.println("1. Employee Salary: " + employee1.getSalary());
-        employee1.print();
-        System.out.println("#######################");
-        System.out.println("2. Employee Salary: " + employee2.getSalary());
-        employee2.print();
-        System.out.println("#######################");
-        System.out.println("3. Employee Salary: " + employee3.getSalary());
-        employee3.print();
-        System.out.println("#######################");
-        System.out.println("4. Employee Salary: " + employee4.getSalary());
-        employee4.print();
-        System.out.println("#######################");
-
+        System.out.println(hachBach);
+        System.out.println(suv);
+        System.out.println("#################################");
+        funSuv(new SUV());
+        funHach(new HachBach());
+        System.out.println("#################################");
+        fun(new SUV());
+        funHach(new HachBach());
     }
 
 }

@@ -1,30 +1,28 @@
-Polymorphism (Method Overriding)
-    Method Overriding requires inheritance because it allows a subclass
-    to provide a specific implementation of a method that is already defined
-    in its superclass. This enables polymorphism,
-    where the subclass can customize the behavior of
-    the inherited method while maintaining
-    the same method signature (name, return type, and parameters)
+What is an Abstract Class?
+An abstract class serves as a blueprint for creating concrete classes.
+It provides a foundation for defining abstract methods,
+which inheriting subclasses are required to implement.
 
-    N.B:
-    Can't do override to static methods.
-    Only void methods.
+Abstract Class in Java:
+An abstract class in Java is a class declared with the abstract keyword.
+It can contain:
+* Abstract methods (methods without a body, only a signature).
+* Non-abstract methods (concrete methods with a body).
 
-Polymorphism (Method Overloading)
-    Polymorphism in Java is the ability of an object to take on many forms,
-    allowing a single method or interface to operate on different types
-    (e.g., using method overriding to provide specific implementations for subclasses).
-    It enables flexibility and reusability by letting code work with objects
-    of different classes in a unified way.
+Key Characteristics of Abstract Classes:
+*Abstract methods:
+    These do not have a body, only a method prototype or signature.
+*Non-abstract methods:
+    These have full implementations and can be inherited directly by subclasses.
 
+Rules for Abstract Classes:
+* An abstract class must be declared with the abstract keyword.
+* It can include both abstract and non-abstract methods.
+* Abstract classes cannot be instantiated (you cannot create objects of an abstract class).
+* It can have final methods, which prevent subclasses from overriding their implementation.
+* Abstract classes can also have:
+* Constructors to initialize fields.
+* Static methods, which belong to the class itself rather than an instance.
 
-
-Polymorphism in Java is of two types:
-
-    Static Polymorphism (Early Binding):
-            Resolved at compile-time using method overloading,
-            where multiple methods share the same name but differ in parameters.
-
-    Dynamic Polymorphism (Late Binding):
-            Resolved at runtime using method overriding,
-            where a subclass provides a specific implementation of a method from its superclass.
+Benefits of Abstract Class (Distribution of tasks)
+Polymorphism Using Abstract Classes.
