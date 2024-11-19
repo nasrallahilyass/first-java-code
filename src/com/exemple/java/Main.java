@@ -1,45 +1,30 @@
 package com.exemple.java;
 
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
-        HashMap<Integer, String> hashMap = new HashMap<>();
-        HashSet<String> hashSet = new HashSet<>();
-
-        // HashMap:
-        hashMap.put(1, "Alex");
-        hashMap.put(2, "Max");
-        hashMap.put(3, "Ketty Perry");
-        hashMap.put(4, "Sam Smith");
-        hashMap.put(5, "Lucy Green");
-
-        // HashSet:
-        hashSet.add("Alex");
-        hashSet.add("Max");
-        hashSet.add("Ketty Perry");
-        hashSet.add("Alex");
-        hashSet.remove("Max");
-        hashSet.clear();
-
-
-        System.out.println("####################################################");
-        System.out.println("####################################################");
-        System.out.println(hashMap);
-        System.out.println("####################################################");
-        System.out.println(hashMap.get(1));
-        System.out.println("####################################################");
-        for (Map.Entry<Integer, String> entry : hashMap.entrySet()) {
-            System.out.println("Key: " + entry.getKey() + " Value: " + entry.getValue());
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        FileInputStream fis = new FileInputStream("test.txt");
+        System.out.println("########## FileInputStream ##########");
+        System.out.println("First way to read the file: ");
+        System.out.println("Print the whole file: ");
+        int data;
+        while ((data = fis.read()) != -1) {
+            System.out.println((char) data);
         }
-        System.out.println("####################################################");
-        System.out.println("####################################################");
-        System.out.println("####################################################");
-        System.out.println(hashSet);
-
+        fis.close();
+        System.out.println("Second way to read the file: ");
+        File file = new File("test.txt");
+        FileInputStream fis2 = new FileInputStream(file);
+        byte[] byteArray = new byte[(int) file.length()];
+        fis2.read(byteArray);
+        String data2 = new String(byteArray);
+        System.out.println(data2);
+        fis2.close();
 
     }
 }
