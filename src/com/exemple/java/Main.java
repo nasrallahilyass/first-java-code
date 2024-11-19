@@ -5,17 +5,22 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        System.out.println("########## FileOutputStream ##########");
-        FileOutputStream fos = new FileOutputStream("check.txt");
-        fos.write("Hello World!".getBytes());
-        fos.flush(); // fix the issue of not writing the data to the file
-        FileInputStream fis = new FileInputStream("check.txt");
-        int data;
-        while ((data = fis.read()) != -1) {
-            System.out.print((char) data);
+        System.out.println("########## File ##########");
+        File file = new File("file.txt");
+        System.out.println("Is file exists: " + file.exists());
+        file.createNewFile();
+        if (file.exists()) {
+            System.out.println("File name: " + file.getName());
+            System.out.println("File path: " + file.getAbsolutePath());
+            System.out.println("File writeable: " + file.canWrite());
+            System.out.println("File readable: " + file.canRead());
+            System.out.println("File size in bytes: " + file.length());
+            System.out.println("Is directory: " + file.isDirectory());
+            System.out.println("Is file: " + file.isFile());
+            System.out.println("Is hidden: " + file.isHidden());
+            System.out.println("Last modified: " + file.lastModified());
+            System.out.println("Can execute: " + file.canExecute());
         }
-
-
     }
 }
 
