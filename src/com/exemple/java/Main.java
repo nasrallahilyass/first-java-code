@@ -5,16 +5,21 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        System.out.println("########## FileOutputStream ##########");
-        FileOutputStream fos = new FileOutputStream("check.txt");
-        fos.write("Hello World".getBytes());
-        fos.flush(); // fix the issue of not writing the data to the file
-        FileInputStream fis = new FileInputStream("check.txt");
-        int data;
-        while ((data = fis.read()) != -1) {
-            System.out.print((char) data);
+
+        File file = new File("C:/users/ME/Desktop/ILYASS NASRALLAH.pdf");
+
+        FileInputStream fis = new FileInputStream(file);
+        byte[] byteArray = new byte[(int) file.length()];
+        fis.read(byteArray);
+
+        for (int i = 0; i < byteArray.length; i++) {
+            System.out.print(byteArray[i]);
         }
 
+        FileOutputStream fos = new FileOutputStream("C:/users/ME/Desktop/JAVA RESUME.pdf");
+        fos.write(byteArray);
+        fos.flush();
+        fos.close();
 
     }
 }
