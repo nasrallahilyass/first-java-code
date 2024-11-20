@@ -2,61 +2,53 @@ package com.exemple.java;
 
 
 import java.io.*;
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException, IOException {
-        File file = new File("file.txt");
-        Scanner scanner = new Scanner(file);
-        System.out.println("##########################");
-        System.out.println("Reading file using Scanner");
-        System.out.println("##########################");
-        while (scanner.hasNextLine()) {
-            System.out.println(scanner.nextLine());
-        }
-        scanner.close();
-        System.out.println("#######################################");
-        System.out.println("Reading file using Scanner useDelimiter");
-        System.out.println("#######################################");
-        Scanner scanner2 = new Scanner(file);
-        scanner2.useDelimiter("\\Z");
-        System.out.println(scanner2.next());
-        scanner2.close();
-        System.out.println("###################################################");
-        System.out.println("Reading file using Scanner useDelimiter only Digits");
-        System.out.println("###################################################");
-        Scanner scanner3 = new Scanner(file);
-        scanner3.useDelimiter("\\D+");
-        while (scanner3.hasNext()) {
-            System.out.println(scanner3.next());
-        }
-        System.out.println("###################################################");
-        System.out.println("###################################################");
-        Scanner scanner4 = new Scanner(file);
-        while (scanner4.hasNextLine()) {
-            parseLine(scanner4.nextLine());
+    public static void main(String[] args) {
+        System.out.println("#############################");
+        System.out.println("####### Serialization #######");
+        System.out.println("#############################");
+
+        ArrayList<Student> studentsList = new ArrayList<>();
+
+        studentsList.add(new Student(111, "John Warthog", 8.5));
+        studentsList.add(new Student(222, "Mary Doe", 9.0));
+        studentsList.add(new Student(333, "Jane Doe", 9.5));
+        studentsList.add(new Student(444, "John Doe", 8.0));
+
+        File file = new File("students.txt");
+
+        // Serialization
+        try (FileOutputStream fos = new FileOutputStream(file);
+             ObjectOutputStream out = new ObjectOutputStream(fos)) {
+
+            out.writeObject(studentsList);
+            System.out.println("Students have been serialized successfully.");
+
+        } catch (IOException e) {
+            System.err.println("Error occurred during serialization: " + e.getMessage());
+            e.printStackTrace();
         }
 
+        System.out.println("#############################");
+        System.out.println("####### Deserialization #######");
+        System.out.println("#############################");
+
+        // Deserialization
+        try (FileInputStream fis = new FileInputStream(file);
+             ObjectInputStream ois = new ObjectInputStream(fis)) {
+
+            ArrayList<Student> deserializedStudentsList = (ArrayList<Student>) ois.readObject();
+            System.out.println("Deserialized Students:");
+            for (Student student : deserializedStudentsList) {
+                System.out.println(student);
+            }
+
+        } catch (IOException | ClassNotFoundException e) {
+            System.err.println("Error occurred during deserialization: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
-
-    static void parseLine(String str) {
-        String name = "", job = "", phone = "";
-        Scanner scanner = new Scanner(str);
-        scanner.useDelimiter(",");
-
-        if (scanner.hasNext()) {
-            name = scanner.next();
-        }
-        if (scanner.hasNext()) {
-            job = scanner.next();
-        }
-        if (scanner.hasNext()) {
-            phone = scanner.next();
-        }
-
-        System.out.println("Name: " + name + ", job: " + job + ", Phone: " + phone);
-        scanner.close();
-    }
-
 }
 
