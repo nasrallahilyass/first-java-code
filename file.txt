@@ -1,1 +1,2 @@
-Wow! That was easy to write :)
+Hello World
+That was super easy !
