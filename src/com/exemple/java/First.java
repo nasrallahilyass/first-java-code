@@ -1,13 +1,13 @@
 package com.exemple.java;
 
 public class First implements Runnable {
-    Sync sync;
+    ReentrantLockClass rlc;
 
-    public First(Sync sync) {
-        this.sync = sync;
+    public First(ReentrantLockClass rlc) {
+        this.rlc = rlc;
     }
 
     public void run() {
-        sync.print(5);
+        rlc.print(5);
     }
 }

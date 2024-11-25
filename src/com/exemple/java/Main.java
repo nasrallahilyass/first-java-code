@@ -14,8 +14,9 @@ public class Main {
 
          */
         Sync sync = new Sync();
-        First first = new First(sync);
-        Second second = new Second(sync);
+        ReentrantLockClass ReentrantLockClass = new ReentrantLockClass();
+        First first = new First(ReentrantLockClass);
+        Second second = new Second(ReentrantLockClass);
 
         Thread thread1 = new Thread(first);
         Thread thread2 = new Thread(second);
